@@ -23,8 +23,31 @@ let primo = true;
 }
 
 function palindromos(num){
-let nums = [];
-
+	let nums = [];
+  let pal=true;
+  let aux=0;
+  let n=[];
+  let k=0;
+  
+  for(let j=1;j<=num;j++){
+  	aux=j;
+    for(let i=0;aux>0;i++){
+      n[i]=parseInt(aux%10)
+      aux=parseInt(aux/10);
+    }
+    
+    for(let i=0;i<n.length-1 && pal===true;i++){
+    	if(n[i]!=n[i+1]){
+      	pal=false;
+      }
+      if(pal===true){
+      	nums[k]=j;
+        k++;
+      }
+    }
+    pal=true;
+  }
+  
 
   console.log("Palindromos: " + nums);
 }
